@@ -15,6 +15,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@hashlips-lab/art-engine": "^2.0.0-alpha3"
+    "@hashlips-lab/art-engine": "^2.0.0-alpha5"
   }
 }

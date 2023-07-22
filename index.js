@@ -1,10 +1,17 @@
-const { ArtEngine, inputs, generators, renderers, exporters } = require('@hashlips-lab/art-engine');
+const {
+  ArtEngine,
+  inputs,
+  generators,
+  renderers,
+  exporters,
+} = require("@hashlips-lab/art-engine");
 
 const BASE_PATH = __dirname;
 
 const ae = new ArtEngine({
   cachePath: `${BASE_PATH}/cache`,
   outputPath: `${BASE_PATH}/output`,
+  useCache: false,
 
   inputs: {
     apes: new inputs.ImageLayersInput({
@@ -14,7 +21,7 @@ const ae = new ArtEngine({
 
   generators: [
     new generators.ImageLayersAttributesGenerator({
-      dataSet: 'apes',
+      dataSet: "apes",
       startIndex: 1,
       endIndex: 10,
     }),
@@ -24,7 +31,7 @@ const ae = new ArtEngine({
     new renderers.ItemAttributesRenderer({
       name: (itemUid) => `Ape ${itemUid}`,
       description: (attributes) => {
-        return `This is a token with "${attributes['Background'][0]}" as Background`;
+        return `This is a token with "${attributes["Background"][0]}" as Background`;
       },
     }),
     new renderers.ImageLayersRenderer({
@@ -36,16 +43,16 @@ const ae = new ArtEngine({
   exporters: [
     new exporters.ImagesExporter(),
     new exporters.Erc721MetadataExporter({
-      imageUriPrefix: 'ipfs://__CID__/',
+      imageUriPrefix: "ipfs://__CID__/",
     }),
     new exporters.SolMetadataExporter({
-      imageUriPrefix: 'ipfs://__CID__/',
-      symbol: 'APES',
+      imageUriPrefix: "ipfs://__CID__/",
+      symbol: "APES",
       sellerFeeBasisPoints: 200,
-      collectionName: 'The Apes',
+      collectionName: "The Apes",
       creators: [
         {
-          address: '__SOLANA_WALLET_ADDRESS_HERE__',
+          address: "__SOLANA_WALLET_ADDRESS_HERE__",
           share: 100,
         },
       ],
@@ -53,4 +60,7 @@ const ae = new ArtEngine({
   ],
 });
 
-ae.run();
+(async () => {
+  await ae.run();
+  await ae.printPerformance();
+})();

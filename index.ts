@@ -9,13 +9,13 @@ const {
 const BASE_PATH = __dirname;
 
 const ae = new ArtEngine({
-  cachePath: `${BASE_PATH}/cache`,
-  outputPath: `${BASE_PATH}/output`,
+  cachePath: `${BASE_PATH}/../cache`,
+  outputPath: `${BASE_PATH}/../output`,
   useCache: false,
 
   inputs: {
     apes: new inputs.ImageLayersInput({
-      assetsBasePath: `${BASE_PATH}/data`,
+      assetsBasePath: `${BASE_PATH}/../data`,
     }),
   },
 
@@ -29,8 +29,8 @@ const ae = new ArtEngine({
 
   renderers: [
     new renderers.ItemAttributesRenderer({
-      name: (itemUid) => `Ape ${itemUid}`,
-      description: (attributes) => {
+      name: (itemUid: string) => `Ape ${itemUid}`,
+      description: (attributes: any) => {
         return `This is a token with "${attributes["Background"][0]}" as Background`;
       },
     }),

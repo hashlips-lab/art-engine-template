@@ -12,9 +12,11 @@
   },
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "rm -rf ./dist && tsc && node dist/index.js",
+    "build": "rm -rf ./dist && tsc"
   },
   "dependencies": {
-    "@hashlips-lab/art-engine": "^2.0.0-alpha5"
+    "@hashlips-lab/art-engine": "^2.0.0-alpha7",
+    "typescript": "^5.1.6"
   }
 }

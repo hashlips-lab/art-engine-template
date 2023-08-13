@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@hashlips-lab/art-engine@^2.0.0-alpha5":
-  version "2.0.0-alpha5"
-  resolved "https://registry.yarnpkg.com/@hashlips-lab/art-engine/-/art-engine-2.0.0-alpha5.tgz#6ec1b7df8866491324a1db267f34188d54c66e66"
-  integrity sha512-OD4xmA6pApOqZUe2jx7AK3gY9HuEu797FliYF3rH3OVE3QxIVWwPv8gGN166lJwES/KMmEQu4miB7WmC1p0FnQ==
+"@hashlips-lab/art-engine@^2.0.0-alpha7":
+  version "2.0.0-alpha7"
+  resolved "https://registry.yarnpkg.com/@hashlips-lab/art-engine/-/art-engine-2.0.0-alpha7.tgz#66cb44315f86ff744e30bf263bdd70b768ae9901"
+  integrity sha512-84COX931yal2VnOqMybPm7ZWX0vedfNhKiG4dv42XuTesb86NHhvulKh6pnu8Ezyvs8ZcS3BlTTNLDJ51O/tGA==
   dependencies:
     random-seed "^0.3.0"
     sharp "0.31.1"
@@ -313,6 +313,11 @@ tunnel-agent@^0.6.0:
   integrity sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==
   dependencies:
     safe-buffer "^5.0.1"
+
+typescript@^5.1.6:
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
+  integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
 
 util-deprecate@^1.0.1:
   version "1.0.2"
